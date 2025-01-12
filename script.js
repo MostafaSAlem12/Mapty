@@ -12,7 +12,6 @@ class Workout {
     this.distance = distance; // in km
     this.duration = duration; // in min
   }
-
   _setDescription() {
     // prettier-ignore
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -20,12 +19,10 @@ class Workout {
     this.description = `${this.type[0].toUpperCase()}${this.type.slice(1)} on ${months[this.date.getMonth()]
       } ${this.date.getDate()}`;
   }
-
   click() {
     this.clicks++;
   }
 }
-
 class Running extends Workout {
   type = 'running';
 
@@ -42,7 +39,6 @@ class Running extends Workout {
     return this.pace;
   }
 }
-
 class Cycling extends Workout {
   type = 'cycling';
 
@@ -53,7 +49,6 @@ class Cycling extends Workout {
     this.calcSpeed();
     this._setDescription();
   }
-
   calcSpeed() {
     // km/h
     this.speed = this.distance / (this.duration / 60);
